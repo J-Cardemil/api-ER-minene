@@ -13,9 +13,6 @@ import datetime
 import matplotlib.pyplot as plt
 import os
 
-
-
-
 ################################################################################################
 ## 1: funcion de consulta consulta de punto (función de consulta, contiene lat, lon y periodo)##
 ################################################################################################
@@ -56,8 +53,6 @@ def api_request(llamada):
         return api_response
     raise Exception('Error en respuesta del API: '+str(server_error)+'. Configuracion: '+str(llamadaJson))
 
-
-
 ################################################################################################
 ## 2: LLAMADO DE DICCIONARIO PARA OBTENER API RESPONSE   #######################################
 ################################################################################################
@@ -70,6 +65,9 @@ with open('llamado.json', 'r') as archivo:
 
 # Cargar el contenido del archivo en un diccionario
 llamado = json.loads(contenido)
+#llama a la función api_request
 
 api_response = api_request(llamado)
-print(api_response)
+#print(api_response)
+
+
