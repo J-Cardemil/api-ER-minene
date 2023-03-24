@@ -1,0 +1,35 @@
+{
+    "action": {
+      "action": "series",
+      "interval": "month",
+      "stat": "mean",
+      "tmy": false
+    },
+    "period": {
+      "start": "2010-01-01",
+      "end": "2010-12-31"
+    },
+    "export": {
+      "label": "datos",
+      "format": "json"
+    },
+    "variables": [
+      {
+        "id": "vel",
+        "options": {
+          "label": "Vel",
+          "stat": "default",
+          "recon": "off",
+          "hgt": 100
+        }
+      }
+    ],
+    "position": [
+      {
+        "label": "S1",
+        "type": "point",
+        "lon": -70.89298248291014,
+        "lat": -32.343761859867335
+      }
+    ]
+  }
