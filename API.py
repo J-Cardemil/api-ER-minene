@@ -22,8 +22,7 @@ import os
 def api_request(llamada):
     # Funcion que realiza la llamada al api y maneja algunas excepciones que es posible que ocurran
     # ENTRADA:
-    #key_api = 'INSERTAR API KEY SOLICITADA'
-    key_api = '658c3205ad3eec2e17807c647c647126774dee02'
+    key_api = 'INSERTAR API KEY SOLICITADA'
     API_URL = 'https://api.minenergia.cl/api/proxy'
     # llamada: Dict con la configuracion de la llamada siguiendo el formato del API
     # SALIDA:
