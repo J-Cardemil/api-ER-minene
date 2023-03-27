@@ -5,9 +5,42 @@ Aplicación en Python para consultar la API de Energías Renovables del Minister
 1. Registrarse a la herramienta online de la API deEnergías Renovables del Ministerio de Energía: https://api.minenergia.cl/register/
 2. Una vez lista su cuenta, enviar un correo a soporte solitando una API_KEY, la cave que permitirá acceder a través del programa "API.py"
 3. Con su "API_KEY" puede ingresarla en el código en la linea 22.
+
+![image](https://user-images.githubusercontent.com/121578605/228037015-58b5ae67-f4bd-4ac9-9524-f70a5508ed78.png)
+
 4. Una vez ingresada la API_KEY puede ejecutar el programa que llamará al archivo JSON de ejemplo, que se puede modificar dentro de la misma API. 
 5. Si desea re-emplazar el archivo JSON de ejemplo puede obtener otra estructura a gusto de la misma API: https://api.minenergia.cl/api/ en la sección Editor completo.
+
 ![image](https://user-images.githubusercontent.com/121578605/228028030-d24d5cd4-7a82-4bd5-a098-459e86b54e36.png)
+
+## Uso de la API y Extracción de un archivo JSON
+
+Una vez dentro de la API, se pueden seleccionar de manera interactiva el o los puntos a evaluar.
+
+![image](https://user-images.githubusercontent.com/121578605/228037622-2dbe099e-e469-4e43-91d8-11796d355919.png)
+
+También es posible agregar los sitios definidos en un archivo del formato CSV o KMZ, siguiendo las instrucciónes proporcionadas en la pestaña "Subir Sitios".
+
+> **HINT: Es importante destacar que no se deben solictar más de 20 puntos simultaneamente, ya que el ancho de banda del servidor podría generar una falla y no entregar una respuesta. Para llamados masivos de más de 20 solicitudes es recomendable contactar al soporte de los Exploradores.**
+
+Luego, se pueden seleccionar las variables a consultar para cada uno de los puntos seleccionados. 
+
+![image](https://user-images.githubusercontent.com/121578605/228038408-a87b1ad4-f4fa-4d52-8367-326aaf3dbe70.png)
+
+> **Mayor información sobre las variables disponibles en la API se encuentran en la última sección del README.md**
+
+Con la información de variables se puede pasar al Paso 4, donde se describe el periodo de tiempo a consultar. Por defecto, se define el periodo como el año 2010 completo, que corresponde al periodo de simulación del modelo WRF. Sin embargo, se puede escoger cualquier periodo dentro del rango 1980 a 2017.
+
+Con el periodo definido, en el paso 5, se puede definir el tipo de operación a relizar a la serie de tiempo (anual, mensual, diaria u horaria) y si desea incluir la estadística de año típico meteorológico (permite estimar los espacios de la serie de tiempo sin información con un año típicio meteorológico). Se puede seleccionar un estadistico a las variables, como: promedio, media, máxima o mínima. 
+
+Con toda esta información se puede psar al ultimo paso donde se selecciona la forma de exportación de los datos. En este punto es donde se puede extraer el llamao en JSON para ser utilizado por el programa "API.py". Con este programa se pueden editar directamente parámetros del formato JSON extraído, lo que permite mayor dinámica en la consulta.
+
+### Archivos que se pueden exportar
+La API de Energías renovables permite extraer los datos solicitados en diversos formatos: 
+1. JSON
+2. Excel: .xlsx
+3. CSV
+4. Archivo de MATLAB
 
 
 ## Variables disponibles en la API
