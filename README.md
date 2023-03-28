@@ -1,6 +1,12 @@
 # api-ER-minene
 Aplicación en Python para consultar la API de Energías Renovables del Ministerio de Energía, Chile. https://api.minenergia.cl/
 
+## Pendiente:
+ -  Agregar forma de edición del JSON, 
+ -  Agregar multillamado por poligono de datos.
+ -  Limitar el consumo de preguntas a 10 al día.
+ -  Limitar dentro de la pregunta el número de puntos, para no demorar demasiado a la API
+
 ### Forma de uso
 1. Registrarse a la herramienta online de la API deEnergías Renovables del Ministerio de Energía: https://api.minenergia.cl/register/
 2. Una vez lista su cuenta, enviar un correo a soporte solitando una API_KEY, la cave que permitirá acceder a través del programa "API.py"
