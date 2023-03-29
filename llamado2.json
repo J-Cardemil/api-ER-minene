@@ -1,0 +1,162 @@
+{
+    "action": {
+      "action": "series",
+      "interval": "hour",
+      "stat": "mean",
+      "tmy": true
+    },
+    "period": {
+      "start": "2010-01-01",
+      "end": "2010-12-31"
+    },
+    "export": {
+      "label": "datos",
+      "format": "json"
+    },
+    "variables": [
+      {
+        "id": "vel",
+        "options": {
+          "label": "Vel",
+          "stat": "default",
+          "recon": "off",
+          "hgt": 100
+        }
+      },
+      {
+        "id": "vdir",
+        "options": {
+          "label": "Dir V.",
+          "stat": "default",
+          "recon": "off",
+          "hgt": 100
+        }
+      },
+      {
+        "id": "tempc",
+        "options": {
+          "label": "Temp",
+          "stat": "default",
+          "recon": "on"
+        }
+      },
+      {
+        "id": "rh",
+        "options": {
+          "label": "Hum",
+          "stat": "default",
+          "recon": "on"
+        }
+      },
+      {
+        "id": "glb",
+        "options": {
+          "label": "GLB",
+          "stat": "default",
+          "band": "full",
+          "clearsky": false,
+          "fill_missing": false,
+          "receptor": {
+            "type": "tilt",
+            "azimuth": 0,
+            "elev1": 99,
+            "elev2": 0,
+            "hsatmax": 45,
+            "optimize": false,
+            "optimize_on_rglb": false
+          }
+        }
+      },
+      {
+        "id": "dir",
+        "options": {
+          "label": "DIR",
+          "stat": "default",
+          "band": "full",
+          "clearsky": false,
+          "fill_missing": false,
+          "receptor": {
+            "type": "tilt",
+            "azimuth": 0,
+            "elev1": 99,
+            "elev2": 0,
+            "hsatmax": 45,
+            "optimize": false,
+            "optimize_on_rglb": false
+          }
+        }
+      },
+      {
+        "id": "dif",
+        "options": {
+          "label": "DIF",
+          "stat": "default",
+          "band": "full",
+          "clearsky": false,
+          "fill_missing": false,
+          "receptor": {
+            "type": "tilt",
+            "azimuth": 0,
+            "elev1": 99,
+            "elev2": 0,
+            "hsatmax": 45,
+            "optimize": false,
+            "optimize_on_rglb": false
+          }
+        }
+      },
+      {
+        "id": "cloud",
+        "options": {
+          "label": "Nube",
+          "stat": "default"
+        }
+      },
+      {
+        "id": "el",
+        "options": {
+          "label": "El",
+          "stat": "default"
+        }
+      },
+      {
+        "id": "az",
+        "options": {
+          "label": "Az",
+          "stat": "default"
+        }
+      }
+    ],
+    "position": [
+      {
+        "label": "S1",
+        "type": "point",
+        "lon": -71.02602804887896,
+        "lat": -33.70353875836578
+      },
+      {
+        "label": "S2",
+        "type": "point",
+        "lon": -71.12558611545279,
+        "lat": -31.60429014344637
+      },
+      {
+        "label": "S3",
+        "type": "point",
+        "lon": -70.48404321573751,
+        "lat": -28.62952133449647
+      },
+      {
+        "label": "S4",
+        "type": "point",
+        "lon": -69.73828782606293,
+        "lat": -26.057324153538133
+      },
+      {
+        "label": "S5",
+        "type": "point",
+        "lon": -68.89860925934278,
+        "lat": -22.464347309447888
+      }
+    ]
+  }
