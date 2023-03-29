@@ -72,7 +72,7 @@ def llamado(archivo):
     else:
         api_response = api_request(llamado_dict)
         print(f'Respuesta de datos OK, datos disponibles para uso en formato {formato}')
-    return api_response
+    return api_response, formato 
 
 
 ################################################################################################
@@ -81,7 +81,7 @@ def llamado(archivo):
 
 #Solo modificar desde acá.
 archivo = 'llamado.json'
-llamado_dict = llamado(archivo)
+llamado_dict, formato  = llamado(archivo)
 
 #VERIFICACIÓN
 print(llamado_dict)
