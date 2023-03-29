@@ -1,0 +1,67 @@
+{
+    "action": {
+      "action": "series",
+      "interval": "month",
+      "stat": "mean",
+      "tmy": true
+    },
+    "period": {
+      "start": "2010-01-01",
+      "end": "2010-12-31"
+    },
+    "export": {
+      "label": "datos",
+      "format": "json"
+    },
+    "variables": [
+      {
+        "id": "vel",
+        "options": {
+          "label": "Vel",
+          "stat": "default",
+          "recon": "off",
+          "hgt": 100
+        }
+      },
+      {
+        "id": "ghi",
+        "options": {
+          "label": "GHI",
+          "stat": "default",
+          "band": "full",
+          "clearsky": false,
+          "fill_missing": false
+        }
+      },
+      {
+        "id": "tempc",
+        "options": {
+          "label": "Temp",
+          "stat": "default",
+          "recon": "on"
+        }
+      },
+      {
+        "id": "rh",
+        "options": {
+          "label": "Hum",
+          "stat": "default",
+          "recon": "on"
+        }
+      }
+    ],
+    "position": [
+      {
+        "label": "S1",
+        "type": "point",
+        "lon": -71.30325317382811,
+        "lat": -34.82287162820139
+      },
+      {
+        "label": "S2",
+        "type": "point",
+        "lon": -70.92182159423827,
+        "lat": -31.27881999371642
+      }
+    ]
+  }
