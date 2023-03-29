@@ -54,20 +54,36 @@ def api_request(llamada):
     raise Exception('Error en respuesta del API: '+str(server_error)+'. Configuracion: '+str(llamadaJson))
 
 ################################################################################################
-## 2: LLAMADO DE DICCIONARIO PARA OBTENER API RESPONSE   #######################################
+##### 2: LLAMADO DE DICCIONARIO PARA OBTENER API RESPONSE   (NO MOFIFICAR)   ###################
 ################################################################################################
 
-llamado = {}
+def llamado(archivo): 
+    llamado_dict = {}
+    # Abrir el archivo y leer su contenido (puede ser llamado 2 o llamado)
+    with open(archivo, 'r') as docfile:
+        contenido = docfile.read()
 
-# Abrir el archivo y leer su contenido
-with open('llamado.json', 'r') as archivo:
-    contenido = archivo.read()
+    # Cargar el contenido del archivo en un diccionario
+    llamado_dict = json.loads(contenido)
+    formato =llamado_dict['export']['format']
+    #revisión de diccionario para ciertas restrictiones: 
+    if len(llamado_dict["position"]) > 10: 
+        print('Demasiados puntos en la consulta, reducir y volver a consultar')
+    else:
+        api_response = api_request(llamado_dict)
+        print(f'Respuesta de datos OK, datos disponibles para uso en formato {formato}')
+    return api_response
 
-# Cargar el contenido del archivo en un diccionario
-llamado = json.loads(contenido)
-#llama a la función api_request
 
-api_response = api_request(llamado)
-#print(api_response)
+################################################################################################
+##### 3: IMPORTAR LLAMADO JSON DE LA API   #####################################################
+################################################################################################
+
+#Solo modificar desde acá.
+archivo = 'llamado.json'
+llamado_dict = llamado(archivo)
+
+#VERIFICACIÓN
+print(llamado_dict)
 
 
