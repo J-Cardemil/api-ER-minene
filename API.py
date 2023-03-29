@@ -5,13 +5,6 @@
 import json
 import simplejson 
 import requests as rq
-import numpy as np
-import time
-import platform
-import pandas as pd
-import datetime
-import matplotlib.pyplot as plt
-import os
 
 ################################################################################################
 ## 1: funcion de consulta consulta de punto (función de consulta, contiene lat, lon y periodo)##
