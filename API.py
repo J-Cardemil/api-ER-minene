@@ -73,10 +73,10 @@ def llamado(archivo):
 ################################################################################################
 
 #Solo modificar desde acá.
-archivo = 'llamado.json'
-llamado_dict, formato  = llamado(archivo)
+#archivo = 'llamado.json'
+#llamado_dict, formato  = llamado(archivo)
 
 #VERIFICACIÓN
-print(llamado_dict)
+#print(llamado_dict)
 
 
