@@ -2,15 +2,14 @@
 ## 0: Librerías para uso de programa  ##########################################################
 ################################################################################################
 
-import json
-import simplejson 
-import requests as rq
 import numpy as np
 import pandas as pd
+import datetime
+import pytz
 
 #graficos
-import plotnine as p9
-from plotnine import ggplot, aes, geom_line, geom_point, labs, theme
+#import plotnine as p9
+#from plotnine import ggplot, aes, geom_line, geom_point, labs, theme
 
 #gui
 from pandasgui import show
@@ -23,8 +22,8 @@ from API import llamado, api_request
 ##### 1: IMPORTAR LLAMADO JSON DE LA API Y CARGA DATOS  ########################################
 ################################################################################################
 
-#Solo modificar desde acá.
-archivo = 'llamado.json'
+#Solo modificar el parámetro archivo desde acá.
+archivo = 'llamado4.json'
 llamado_dict, formato = llamado(archivo)
 
 ################################################################################################
@@ -45,28 +44,41 @@ else:
     vars_name = []
     for i in range(vars):
         vars_name.append(llamado_dict['variable_info'][i]['label'])
-    
-    #contrucción de matriz de datos: sitio, tiempo, variables
-    #dict_arrange = {}
 
     lista_sitio = []
-    lista_tiempo = []
+    lista_tiempo_unix = []
     tupla_datos = []
-    #print(dict_arrange)
     for i in range(sitios):
         for j in range(tiempo):
             lista_sitio.append(sitios_label[i])
-            lista_tiempo.append(llamado_dict['time'][j])
+            lista_tiempo_unix.append(llamado_dict['time'][j])
         lista_aux = []
         for k in range(vars):
             lista_aux.append(llamado_dict['data'][k+i*vars])
         tupla_datos.append(lista_aux)
-    
-    print(len(tupla_datos[0]))
-    
+
+    # transformación valores UNIX de timestamp
+    print(lista_tiempo_unix)
+    lista_tiempo = []
+    for timestamp in lista_tiempo_unix:
+        date_time = datetime.datetime.fromtimestamp(timestamp, pytz.UTC)
+        lista_tiempo.append(date_time.strftime('%d/%m/%Y %H:%M'))
+
+
     dict_arrange = {
         'sitios' : lista_sitio,
         'tiempo': lista_tiempo,
     }       
-    print(dict_arrange)
+
+    for i in range(sitios):
+        for j, datos_j in enumerate(tupla_datos[i]):
+            nombre_columna = f'datos_{j+1}'
+            if nombre_columna not in dict_arrange:
+                dict_arrange[nombre_columna] = datos_j
+            else:
+                dict_arrange[nombre_columna].extend(datos_j) 
+    
     df = pd.DataFrame(dict_arrange)
+    #print(df.head(15))
+
+show(df)
