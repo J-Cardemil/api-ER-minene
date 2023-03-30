@@ -30,7 +30,6 @@ llamado_dict, formato = llamado(archivo)
 ##### 2: TRATAMIENTO DE DICCIONARIO A PANDAS Y CARGA DE GUI  ###################################
 ################################################################################################
 
-
 #verificación que el llamado solcitó json como salida
 if formato != 'json' :
     print("Error: archivo de llamado debe solicitar formato de exportación en JSON")
@@ -56,14 +55,12 @@ else:
         for k in range(vars):
             lista_aux.append(llamado_dict['data'][k+i*vars])
         tupla_datos.append(lista_aux)
-
     # transformación valores UNIX de timestamp
     print(lista_tiempo_unix)
     lista_tiempo = []
     for timestamp in lista_tiempo_unix:
         date_time = datetime.datetime.fromtimestamp(timestamp, pytz.UTC)
         lista_tiempo.append(date_time.strftime('%d/%m/%Y %H:%M'))
-
 
     dict_arrange = {
         'sitios' : lista_sitio,
@@ -79,6 +76,4 @@ else:
                 dict_arrange[nombre_columna].extend(datos_j) 
     
     df = pd.DataFrame(dict_arrange)
-    #print(df.head(15))
-
 show(df)
