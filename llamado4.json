@@ -1,0 +1,82 @@
+{
+    "action": {
+      "action": "series",
+      "interval": "day",
+      "stat": "mean",
+      "tmy": true
+    },
+    "period": {
+      "start": "2010-01-01",
+      "end": "2010-12-31"
+    },
+    "export": {
+      "label": "datos",
+      "format": "json"
+    },
+    "variables": [
+      {
+        "id": "vel",
+        "options": {
+          "label": "Vel",
+          "stat": "default",
+          "recon": "off",
+          "hgt": 100
+        }
+      },
+      {
+        "id": "tempc",
+        "options": {
+          "label": "Temp",
+          "stat": "default",
+          "recon": "on"
+        }
+      },
+      {
+        "id": "rh",
+        "options": {
+          "label": "Hum",
+          "stat": "default",
+          "recon": "on"
+        }
+      },
+      {
+        "id": "glb",
+        "options": {
+          "label": "GLB",
+          "stat": "default",
+          "band": "full",
+          "clearsky": false,
+          "fill_missing": false,
+          "receptor": {
+            "type": "tilt",
+            "azimuth": 0,
+            "elev1": 99,
+            "elev2": 0,
+            "hsatmax": 45,
+            "optimize": false,
+            "optimize_on_rglb": false
+          }
+        }
+      }
+    ],
+    "position": [
+      {
+        "label": "S1",
+        "type": "point",
+        "lon": -71.55216217041014,
+        "lat": -35.87212973565382
+      },
+      {
+        "label": "S2",
+        "type": "point",
+        "lon": -70.68055693149141,
+        "lat": -33.828283544101076
+      },
+      {
+        "label": "S3",
+        "type": "point",
+        "lon": -70.72450224399141,
+        "lat": -30.858685684493526
+      }
+    ]
+  }
