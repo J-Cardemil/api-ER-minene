@@ -69,7 +69,7 @@ else:
 
     for i in range(sitios):
         for j, datos_j in enumerate(tupla_datos[i]):
-            nombre_columna = f'datos_{j+1}'
+            nombre_columna = f'datos_{vars_name[j]}'
             if nombre_columna not in dict_arrange:
                 dict_arrange[nombre_columna] = datos_j
             else:
