@@ -12,7 +12,7 @@ import requests as rq
 def api_request(llamada):
     # Funcion que realiza la llamada al api y maneja algunas excepciones que es posible que ocurran
     # ENTRADA:
-    key_api = ' 5631b3628dc180cf53c341c2739153a9a5b0401d'
+    key_api = '5631b3628dc180cf53c341c2739153a9a5b0401d'
     API_URL = 'https://api.minenergia.cl/api/proxy'
     # llamada: Dict con la configuracion de la llamada siguiendo el formato del API
     # SALIDA:
